@@ -14,8 +14,13 @@ namespace Sandbox
         //
         public int Faculty(int n)
         {
-            // This needs to be changed...
-            return 0;
+            if (n <= 1)
+            {
+                return 1;
+            }
+            int sum = n * Faculty(n - 1);
+
+            return sum;
         }
 
         // This method must return the sum of the numbers between
@@ -23,10 +28,18 @@ namespace Sandbox
         // Example: If start = 3 and end = 7, the interval sum will
         // be 3 + 4 + 5 + 6 + 7 = 25;
         // NB: If start > end, the sum is 0 (zero)
+        
         public int IntervalSum(int start, int end)
         {
-            // This needs to be changed...
-            return 0;
+            int sum = 0;
+            
+            for (int i = start; i <= end; i++)
+            {
+                sum = sum + i;
+                
+            }
+
+            return sum;
         }
 
         // This method must return the highest square number
@@ -37,8 +50,18 @@ namespace Sandbox
         // NB: If the limit is zero or negative, return zero
         public int HighestSquareBelowLimit(int limit)
         {
+            int resolved = 0;
+
+            for (int i = 0; i*i < limit; i++)
+            {
+                resolved = i * i; 
+
+            }
+            
+            //sum = Math.Sqrt(limit);
+                
             // This needs to be changed...
-            return 0;
+            return resolved;
         }
 
 
@@ -50,8 +73,18 @@ namespace Sandbox
         // NB: Negative numbers are not prime numbers
         public bool IsPrime(int n)
         {
-            // This needs to be changed...
-            return false;
+            if (n == 0 && n == 1)
+                return false;
+            
+            
+                for (int i = 2; i < n; i++)
+                {
+                    if (n % i == 0)
+                    {
+                        return false;
+                    }
+                }
+                return true;
         }
     }
 }
